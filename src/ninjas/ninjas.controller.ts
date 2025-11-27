@@ -1,10 +1,19 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Post } from '@nestjs/common';
 
 @Controller('ninjas')
 export class NinjasController {
    
    @Get(':id')
-    getNinjas(@Param('id') id:string){
-        return ['Umair','Ali','Azan', 'Osama', 2];
+    getNinjas(@Param('id') id:number){
+        return {
+            id
+        };
     }
+    @Post(':id')
+    postninjha(@Param('id') id:string) {
+        return {
+            id
+        }
+    }
+
 }
