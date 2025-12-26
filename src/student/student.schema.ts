@@ -3,11 +3,11 @@ import { Document } from "mongoose";
 
 export type StudentDocument  = Student & Document ;
 
-@Schema({ timestamp: true})
+@Schema({ timestamps: true})
 export class Student {
     @Prop( { required:true})
     name:string;
-    @Prop({required:true})
+     @Prop({required:true})
     age:number;
 
     @Prop()
@@ -15,3 +15,4 @@ export class Student {
 }
 
 export const  StudentSchema = SchemaFactory.createForClass(Student);
+
